@@ -1,0 +1,100 @@
+<div class="body">
+  <div class="menu">
+    <span class="title-login">User registration</span>
+    <form class="flex" #registerform="ngForm" (ngSubmit)="registerUser()">
+      <small class="text-danger">{{ msg }}</small>
+      <div class="input-flex">
+        <label for="email" class="form-label">Mail</label>
+        <input
+          type="email"
+          pInputText
+          [(ngModel)]="user.emailId"
+          class="form-control"
+          id="email"
+          name="email"
+          required
+          #email="ngModel"
+          pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+        />
+
+        <div *ngIf="email.errors && email.invalid && email.touched">
+          <small class="text-danger" *ngIf="email.errors?.['required']"
+            >Email is required field</small
+          >
+          <small class="text-danger" *ngIf="email.errors?.['pattern']"
+            >Enter the valid mail</small
+          >
+        </div>
+      </div>
+
+      <div class="input-flex">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          pInputText
+          [(ngModel)]="user.userName"
+          class="form-control"
+          id="username"
+          name="username"
+          required
+          #username="ngModel"
+        />
+
+        <div *ngIf="username.errors && username.invalid && username.touched">
+          <small class="text-danger" *ngIf="username.errors?.['required']"
+            >Username is required field</small
+          >
+        </div>
+      </div>
+
+      <div class="input-flex">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          pInputText
+          [(ngModel)]="user.password"
+          class="form-control"
+          id="password"
+          name="password"
+          required
+          #password="ngModel"
+        />
+
+        <div *ngIf="password.errors && password.invalid && password.touched">
+          <small class="text-danger" *ngIf="password.errors?.['required']"
+            >Password is required field</small
+          >
+        </div>
+      </div>
+
+      <div class="input-flex">
+        <label for="cpassword" class="form-label">Confirm password</label>
+        <input
+          type="password"
+          pInputText
+          class="form-control"
+          id="cpassword"
+          name="cpassword"
+          required
+          #cpassword="ngModel"
+          (ngModel)="(user.password)"
+        />
+        <div *ngIf="cpassword.value !== password.value && cpassword.touched">
+          <small class="text-danger"
+            >Confirm password & password must be the same</small
+          >
+        </div>
+      </div>
+
+      <div class="button-position">
+        <button
+          pButton
+          type="submit"
+          [disabled]="registerform.form.invalid"
+          label="Register"
+        ></button>
+        <a routerLink="">Existing user? Login here</a>
+      </div>
+    </form>
+  </div>
+</div>

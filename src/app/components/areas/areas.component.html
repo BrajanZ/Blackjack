@@ -1,0 +1,66 @@
+<div class="body">
+  <div class="menu">
+    <span class="gameResult"> {{ this.gameResult }}</span>
+    <div class="row-flex">
+      <div class="area">
+        <span class="identity">
+          {{ this.progressData?.content.player1.userName }} ({{
+            this.progressData?.content.player1.points
+          }})
+        </span>
+        <div class="row flexBox">
+          <ng-container
+            *ngFor="let userCard of this.progressData?.content.player1.card"
+          >
+            <app-card
+              [cardURL]="'./assets/cards/' + userCard + '.png'"
+            ></app-card>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="area2">
+        <span class="identity"
+          >{{ this.progressData?.content.player2.userName }} ({{
+            this.progressData?.content.player2.points
+          }})</span
+        >
+        <div class="row flexBox">
+          <ng-container
+            *ngFor="let user2Card of this.progressData?.content.player2.card"
+          >
+            <app-card
+              [cardURL]="'./assets/cards/' + user2Card + '.png'"
+            ></app-card>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="buttons">
+    <button
+      pButton
+      class="p-button-success"
+      [disabled]="checkStay()"
+      (click)="hit()"
+    >
+      Hit
+    </button>
+    <button
+      pButton
+      class="p-button-warning"
+      [disabled]="checkStay()"
+      (click)="stay()"
+    >
+      Stay
+    </button>
+    <button
+      pButton
+      class="p-button-danger"
+      [disabled]="checkReset()"
+      (click)="reset()"
+    >
+      Play again
+    </button>
+  </div>
+</div>

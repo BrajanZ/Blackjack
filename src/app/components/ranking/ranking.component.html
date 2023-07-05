@@ -1,0 +1,26 @@
+<div class="body">
+  <div class="menu">
+    <div class="over-table">
+      <span class="title-table">Ranking</span>
+      <button pButton (click)="getRanking()">
+        <i class="pi pi-refresh"></i>
+      </button>
+    </div>
+    <table class="table-ranking">
+      <tr>
+        <th class="table-ranking-position">Position</th>
+        <th>Name</th>
+        <th>Points</th>
+        <th>Wins</th>
+        <th>Lost</th>
+      </tr>
+      <tr *ngFor="let rank of ranking; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ rank.userName }}</td>
+        <td>{{ rank.rankScore }}</td>
+        <td>{{ rank.gamesWon }}</td>
+        <td>{{ rank.gamesLose }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

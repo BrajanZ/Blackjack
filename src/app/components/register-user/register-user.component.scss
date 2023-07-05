@@ -1,0 +1,64 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .menu {
+    height: 80vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 0.7rem;
+
+    .title-login {
+      font-size: 2rem;
+    }
+
+    .flex {
+      height: 80%;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+
+      .text-danger {
+        color: red;
+        font-size: 0.9rem;
+      }
+
+      .input-flex {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+        height: 20%;
+
+        .form-label {
+          font-size: 1.3rem;
+        }
+      }
+
+      .button-position {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.2rem;
+        margin-top: 0.8rem;
+
+        a {
+          color: white;
+        }
+      }
+    }
+
+    .p-button {
+      width: 20vw;
+    }
+
+    .p-inputtext {
+      height: 40%;
+    }
+  }
+}

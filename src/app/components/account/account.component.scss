@@ -1,0 +1,50 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .menu {
+    height: 60vh;
+    width: 20vw;
+    border-radius: 0.7rem;
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 2rem;
+      gap: 1rem;
+
+      .profile-title {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5rem;
+      }
+
+      .profile-data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+
+        .input-flex {
+          display: flex;
+          flex-direction: column;
+          gap: 0.3rem;
+
+          .form-label {
+            font-size: 1.2rem;
+          }
+        }
+
+        .button-position {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 0.2rem;
+        }
+      }
+    }
+  }
+}

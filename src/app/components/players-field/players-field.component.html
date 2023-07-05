@@ -1,0 +1,32 @@
+<div class="body">
+  <div class="left-side">
+    <div class="title">
+      <span>List of games</span>
+      <button pButton (click)="getAllGames()">
+        <i class="pi pi-refresh"></i>
+      </button>
+    </div>
+
+    <ul class="list">
+      <li class="list-element" *ngFor="let game of allGamesId">
+        <span class="list-span">{{ game.gameName }}</span>
+        <button pButton (click)="conn(game.gameId)" label="Connect"></button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="right-side">
+    <label for="gamename" class="input-label">
+      Enter the name of the game</label
+    >
+    <input
+      pInputText
+      type="text"
+      name="gamename"
+      id="gamename"
+      required
+      [(ngModel)]="input"
+    />
+    <button pButton (click)="create()" label="Create game"></button>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .menu {
+    height: 60vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 0.7rem;
+
+    .p-button {
+      width: 20vw;
+    }
+  }
+}

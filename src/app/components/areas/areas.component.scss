@@ -1,0 +1,61 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+
+  .menu {
+    height: 72vh;
+    width: 98vw;
+    border-radius: 0.7rem;
+    padding: 0.3rem;
+    text-align: center;
+
+    .gameResult {
+      font-size: 1.5rem;
+    }
+
+    .row-flex {
+      display: flex;
+      flex-direction: row;
+      height: 93%;
+      border-top: 2px solid;
+      padding-top: 0.2rem;
+
+      .area {
+        width: 50%;
+        border-right: 1px solid;
+        padding-top: 0.4rem;
+      }
+
+      .area2 {
+        width: 50%;
+        border-left: 1px solid;
+        padding-top: 0.4rem;
+      }
+
+      .identity {
+        font-weight: lighter;
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      .flexBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-top: 0.2rem;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 98vw;
+    margin-top: 0.7rem;
+  }
+}
